@@ -4,7 +4,7 @@ require_relative "lib/bsky_parser/version"
 
 Gem::Specification.new do |s|
   s.name        = "bsky_parser"
-  s.version     = BskyParser::Version
+  s.version     = BskyParser::VERSION
   s.summary     = "Parses text and generates Bluesky rich text facets"
   s.authors     = ["Jonathan Yeong"]
   s.email       = "hey@jonathanyeong.com"
@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   end
 
   s.bindir = "exe"
-  s.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
+  s.executables = s.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   s.require_paths = ["lib"]
 
 
