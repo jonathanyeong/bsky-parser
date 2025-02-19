@@ -1,6 +1,10 @@
+# frozen_string_literal: true
+
+require_relative "bsky_parser/version"
+
 require "faraday"
 
-class BskyParser
+module BskyParser
   class << self
     BASE_URL = "https://bsky.social"
 
