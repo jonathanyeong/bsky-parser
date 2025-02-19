@@ -1,5 +1,8 @@
 # Bsky Parser
 
+> [!WARNING]
+> API is stable but development is still in progress. Aka no tests yet!
+
 Gem that will parse text content and generate Bluesky rich text facets.
 
 Facets supported:
