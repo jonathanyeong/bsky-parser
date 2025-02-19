@@ -48,4 +48,4 @@ parsed_content, facets = BskyParser.parse(content)
 
 ## License
 
-The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
+The gem is available as open source under the terms of the [MIT License](https://github.com/jonathanyeong/bsky-parser/blob/main/LICENSE).
