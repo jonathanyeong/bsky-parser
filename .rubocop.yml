@@ -1,8 +1,43 @@
 AllCops:
-  TargetRubyVersion: 3.0
+  TargetRubyVersion: 3.3
+  NewCops: enable
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
 
 Style/StringLiteralsInInterpolation:
   EnforcedStyle: double_quotes
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always
+
+Metrics/MethodLength:
+  Max: 20
+
+Metrics/AbcSize:
+  Max: 30
+
+Metrics/ClassLength:
+  Enabled: true
+  Max: 150
+  CountComments: false
+  Exclude:
+    - "test/**/*"
+    - "spec/**/*"
+
+Metrics/ModuleLength:
+  Enabled: true
+  Max: 150
+  CountComments: false
+  Exclude:
+    - "test/**/*"
+    - "spec/**/*"
+
+
+plugins:
+  - rubocop-rake
+  - rubocop-minitest

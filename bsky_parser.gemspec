@@ -23,14 +23,14 @@ Gem::Specification.new do |s|
   s.executables = s.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   s.require_paths = ["lib"]
 
-
   s.homepage    = "https://github.com/jonathanyeong/bsky-parser"
   s.metadata    = {
-    "homepage_uri"  => s.homepage,
+    "homepage_uri" => s.homepage,
     "source_code_uri" => "https://github.com/jonathanyeong/bsky-parser",
-    "bug_tracker_uri" => "https://github.com/jonathanyeong/bsky-parser/issues"
+    "bug_tracker_uri" => "https://github.com/jonathanyeong/bsky-parser/issues",
+    "rubygems_mfa_required" => "true"
   }
-  s.license       = "MIT"
+  s.license = "MIT"
   s.required_ruby_version = ">= 3.3.6"
   s.add_dependency "faraday", "~> 2.12.2"
 end

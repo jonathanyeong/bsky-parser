@@ -42,6 +42,13 @@ GEM
       unicode-display_width (>= 2.4.0, < 4.0)
     rubocop-ast (1.38.0)
       parser (>= 3.3.1.0)
+    rubocop-minitest (0.37.1)
+      lint_roller (~> 1.1)
+      rubocop (>= 1.72.1, < 2.0)
+      rubocop-ast (>= 1.38.0, < 2.0)
+    rubocop-rake (0.7.1)
+      lint_roller (~> 1.1)
+      rubocop (>= 1.72.1)
     ruby-progressbar (1.13.0)
     unicode-display_width (3.1.4)
       unicode-emoji (~> 4.0, >= 4.0.4)
@@ -56,7 +63,9 @@ DEPENDENCIES
   bsky_parser!
   minitest (~> 5.16)
   rake (~> 13.0)
-  rubocop (~> 1.21)
+  rubocop (~> 1.72)
+  rubocop-minitest (~> 0.37.1)
+  rubocop-rake (~> 0.7.1)
 
 BUNDLED WITH
    2.5.22
