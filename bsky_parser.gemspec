@@ -3,7 +3,7 @@
 require_relative "lib/bsky_parser/version"
 
 Gem::Specification.new do |s|
-  s.name        = "bsky_parser"
+  s.name        = "bsky-parser"
   s.version     = BskyParser::VERSION
   s.summary     = "Parses text and generates Bluesky rich text facets"
   s.authors     = ["Jonathan Yeong"]
