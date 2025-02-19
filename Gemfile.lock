@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bsky_parser (1.0.1)
+    bsky-parser (1.0.1)
       faraday (~> 2.12.2)
 
 GEM
@@ -60,7 +60,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  bsky_parser!
+  bsky-parser!
   minitest (~> 5.16)
   rake (~> 13.0)
   rubocop (~> 1.72)
