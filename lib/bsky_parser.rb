@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require_relative "bsky_parser/version"
+require_relative "bsky_parser/facets/tag_facet"
 
 require "faraday"
 
@@ -11,7 +12,7 @@ module BskyParser
     def parse(content)
       parsed_content, mkdown_facets = process_markdown_links(content)
 
-      facets = mkdown_facets + tag_facets(parsed_content) + mention_facets(parsed_content) + url_facets(parsed_content)
+      facets = mkdown_facets + Facets::TagFacet.process(parsed_content) + mention_facets(parsed_content) + url_facets(parsed_content)
 
       [parsed_content, facets]
     end
