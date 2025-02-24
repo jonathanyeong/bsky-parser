@@ -17,7 +17,7 @@ module BskyParser
         # The range has an inclusive start and an exclusive end.
         # That means the end number goes 1 past what you might expect.
         # https://docs.bsky.app/docs/advanced-guides/post-richtext
-        assert_equal 6, facet[:index][:byteEnd]
+        assert_equal content.length, facet[:index][:byteEnd]
 
         feature = facet[:features].first
 
@@ -57,9 +57,6 @@ module BskyParser
         facet = facets.first
 
         assert_equal 0, facet[:index][:byteStart]
-        # The range has an inclusive start and an exclusive end.
-        # That means the end number goes 1 past what you might expect.
-        # https://docs.bsky.app/docs/advanced-guides/post-richtext
         assert_equal 9, facet[:index][:byteEnd]
 
         feature = facet[:features].first
@@ -74,6 +71,23 @@ module BskyParser
 
         # Behaviour mimics bsky.app
         assert_equal 0, facets.length
+      end
+
+      def test_hashtag_underscore_dash
+        content = "#hello-world_abc"
+        facets = TagFacet.process(content)
+
+        assert_equal 1, facets.length
+
+        facet = facets.first
+
+        assert_equal 0, facet[:index][:byteStart]
+        assert_equal content.length, facet[:index][:byteEnd]
+
+        feature = facet[:features].first
+
+        assert_equal "app.bsky.richtext.facet#tag", feature[:$type]
+        assert_equal "hello-world_abc", feature[:tag]
       end
     end
   end

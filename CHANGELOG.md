@@ -2,7 +2,7 @@
 
 ### Changed
 
-- Split out tag facets into a separate class and added tests for that class.
+- Fix tag facet regex. Previously, it would match this entire string: `#hello!`. Now it correctly matches `#hello` without the `!`.
 
 ## [1.0.1] - 2025-02-19
 

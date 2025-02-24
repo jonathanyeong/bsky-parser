@@ -7,7 +7,7 @@ module BskyParser
     class TagFacet < BaseFacet
       def process
         facets = []
-        tag_pattern = /(^|\s)#\w+/
+        tag_pattern = /(^|\s)#[\w-]+/
         matches = content.to_enum(:scan, tag_pattern).map do
           match = Regexp.last_match
           # If there's a space before the hashtag (match[1] contains a space),
