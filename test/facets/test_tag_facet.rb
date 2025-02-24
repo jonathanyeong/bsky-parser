@@ -45,7 +45,7 @@ module BskyParser
         content = "hello world"
         facets = TagFacet.process(content)
 
-        assert_equal 0, facets.length
+        assert_empty facets
       end
 
       def test_complex_hashtag
@@ -70,7 +70,7 @@ module BskyParser
         facets = TagFacet.process(content)
 
         # Behaviour mimics bsky.app
-        assert_equal 0, facets.length
+        assert_empty facets
       end
 
       def test_hashtag_underscore_dash

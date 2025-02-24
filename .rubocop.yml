@@ -22,6 +22,8 @@ Metrics/MethodLength:
 
 Metrics/AbcSize:
   Max: 30
+  Exclude:
+    - 'test/**/*'
 
 Metrics/ClassLength:
   Enabled: true

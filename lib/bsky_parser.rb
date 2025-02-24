@@ -2,6 +2,7 @@
 
 require_relative "bsky_parser/version"
 require_relative "bsky_parser/facets/tag_facet"
+require_relative "bsky_parser/facets/url_facet"
 
 require "faraday"
 
@@ -23,29 +24,6 @@ module BskyParser
       @conn ||= Faraday.new(url: BASE_URL) do |f|
         f.request :json
       end
-    end
-
-    def tag_facets(content)
-      facets = []
-      tag_pattern = /#\S+/
-      matches = content.to_enum(:scan, tag_pattern).map do
-        { tag: Regexp.last_match, indices: Regexp.last_match.offset(0) }
-      end
-      matches.each do |match|
-        tag = match[:tag].to_s[1..] # Trim leading hashtag
-        indices = match[:indices]
-        facets << {
-          index: {
-            byteStart: indices[0],
-            byteEnd: indices[1]
-          },
-          features: [{
-            "$type": "app.bsky.richtext.facet#tag",
-            tag: tag
-          }]
-        }
-      end
-      facets
     end
 
     def mention_facets(content)
