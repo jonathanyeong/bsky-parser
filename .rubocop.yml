@@ -1,5 +1,3 @@
-inherit_from: .rubocop_todo.yml
-
 AllCops:
   TargetRubyVersion: 3.3
   NewCops: enable
@@ -19,6 +17,8 @@ Style/FrozenStringLiteralComment:
 
 Metrics/MethodLength:
   Max: 20
+  Exclude:
+    - "test/**/*"
 
 Metrics/AbcSize:
   Max: 30
