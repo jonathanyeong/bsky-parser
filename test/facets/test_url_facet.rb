@@ -22,6 +22,23 @@ module BskyParser
         assert_equal "https://example.com", feature[:uri]
       end
 
+      def test_basic_www_url
+        content = "https://www.example.com"
+        facets = URLFacet.process(content)
+
+        assert_equal 1, facets.length
+
+        facet = facets.first
+
+        assert_equal 0, facet[:index][:byteStart]
+        assert_equal content.length, facet[:index][:byteEnd]
+
+        feature = facet[:features].first
+
+        assert_equal "app.bsky.richtext.facet#link", feature[:$type]
+        assert_equal "https://www.example.com", feature[:uri]
+      end
+
       def test_multiple_urls
         test_url_one = "https://example.com"
         test_url_two = "https://test.com"
