@@ -7,13 +7,13 @@ module BskyParser
     class URLFacet < BaseFacet
       def process
         facets = []
-        # URL pattern from https://docs.bsky.app/docs/advanced-guides/post-richtext
+        # URI::RFC2396_PARSER.make_regexp has a complex regex with multiple capture groups
+        # Instead, use the URL pattern from https://docs.bsky.app/docs/advanced-guides/post-richtext
         url_pattern = %r{(^|\s)(https?://(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&/=]*[-a-zA-Z0-9@%_\+~#/=])?)}
 
         matches = content.to_enum(:scan, url_pattern).map do
           match = Regexp.last_match
-          # If there's a space before the hashtag (match[1] contains a space),
-          # adjust the start position by adding 1
+          # Handles multiple urls
           start_offset = match[1]&.length || 0
 
           {
