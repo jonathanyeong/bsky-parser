@@ -7,13 +7,20 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
+    addressable (2.8.7)
+      public_suffix (>= 2.0.2, < 7.0)
     ast (2.4.2)
+    bigdecimal (3.1.9)
+    crack (1.0.0)
+      bigdecimal
+      rexml
     faraday (2.12.2)
       faraday-net_http (>= 2.0, < 3.5)
       json
       logger
     faraday-net_http (3.4.0)
       net-http (>= 0.5.0)
+    hashdiff (1.1.2)
     json (2.10.1)
     language_server-protocol (3.17.0.4)
     lint_roller (1.1.0)
@@ -25,10 +32,12 @@ GEM
     parser (3.3.7.1)
       ast (~> 2.4.1)
       racc
+    public_suffix (6.0.1)
     racc (1.8.1)
     rainbow (3.1.1)
     rake (13.2.1)
     regexp_parser (2.10.0)
+    rexml (3.4.1)
     rubocop (1.72.2)
       json (~> 2.3)
       language_server-protocol (~> 3.17.0.2)
@@ -54,6 +63,10 @@ GEM
       unicode-emoji (~> 4.0, >= 4.0.4)
     unicode-emoji (4.0.4)
     uri (1.0.2)
+    webmock (3.25.0)
+      addressable (>= 2.8.0)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
 
 PLATFORMS
   aarch64-linux
@@ -66,6 +79,7 @@ DEPENDENCIES
   rubocop (~> 1.72)
   rubocop-minitest (~> 0.37.1)
   rubocop-rake (~> 0.7.1)
+  webmock
 
 BUNDLED WITH
    2.5.22
