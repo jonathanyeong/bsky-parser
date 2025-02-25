@@ -49,15 +49,13 @@ module BskyParser
           \(
             (?<url>
               https?://                     # http:// or https://
-              (?:www\.)?                    # Optional www.
+              (www\.)?                      # Optional www.
               [-a-zA-Z0-9@:%._\+~#=]{1,256} # Domain name
               \.
               [a-zA-Z0-9()]{1,6}            # TLD
               \b
-              (?:
-                [-a-zA-Z0-9()@:%_\+.~#?&/=]* # URL path, params, etc.
-                [-a-zA-Z0-9@%_\+~#/=]        # URL must end with these chars
-              )?
+              ([-a-zA-Z0-9()@:%_\+.~#?&/=]* # URL path, params, etc.
+              [-a-zA-Z0-9@%_\+~#/=])?
             )
           \)
         }x
