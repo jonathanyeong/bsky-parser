@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bsky-parser (1.0.1)
+    bsky-parser (1.0.2)
       faraday (~> 2.12.2)
 
 GEM
