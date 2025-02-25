@@ -17,7 +17,7 @@ module BskyParser
         mkdown_facets +
         Facets::TagFacet.process(parsed_content) +
         Facets::MentionFacet.process(parsed_content) +
-        Facets::UrlFacet.process(parsed_content)
+        Facets::URLFacet.process(parsed_content)
 
       [parsed_content, facets]
     end
